@@ -1,4 +1,4 @@
-{{page-title @model.name "Songs | Rock & Roll with Dinesh" replace=true}}
+{{page-title @model.name "Subtasks" replace=true}}
 
 {{#if @model.songs.length}}
 <ul>
@@ -11,12 +11,14 @@
                 @onUpdate={{fn this.updateRating song}}
             />
         </span>
+        <button class="inline-block ml-2 mt-2 p-2 rounded bg-blue-600 shadow-md hover:shadow-lg hover:text-black hover:bg-white focus:outline-none" type="button">Edit</button>
+         <button class="inline-block ml-2 mt-2 p-2 rounded bg-red-600 shadow-md hover:shadow-lg hover:text-black hover:bg-white focus:outline-none" type="button">Delete</button>
     </li>
     {{/each}}
 </ul>
 {{else}}
 <p class="text-center">
-    The band has no songs yet.
+    The task has no subtasks yet.
 </p>
 {{/if}}
 {{#if this.showAddSong}}
@@ -26,7 +28,7 @@
         class="px-4 py-2 rounded bg-purple-600 shadow-md hover:shadow-lg hover:text-white hover:bg-purple-600 focus:outline-none"
         {{on "click" (set this "showAddSong" false)}}
     >
-        Add Song
+        Add Subtask
     </button>
 </div>
 {{else}}
